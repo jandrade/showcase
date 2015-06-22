@@ -1,0 +1,57 @@
+/**
+ * @fileOverview Styles for card
+ *
+ */
+.card {
+	border: none;
+	float: left;
+	margin: 1%;
+	width: 23%;
+
+	.panel-body {
+		border-radius: 5px;
+		padding: 0;
+		text-align: center;
+	}
+
+	&:hover {
+		box-shadow: @shadow;
+		transition: box-shadow 0.1s ease-in-out;
+
+		.panel-footer {
+			background-color: darken(@color-04, 5%);
+			border-color: darken(@color-04, 50%);
+		}
+	}
+
+	/**
+	 * Tablet
+	 * < 1024
+	 */
+	@media only screen and (max-width : @screen-md) {
+		& {
+			width: 31%;
+		}
+	}
+
+	/**
+	 * Tablet
+	 * < 768
+	 */
+	@media only screen and (max-width : @screen-md) {
+		& {
+			width: 48%;
+		}
+	}
+
+	/**
+	 * Mobile
+	 * < 480
+	 */
+	@media only screen and (max-width : @screen-xs) {
+		& {
+			float: none;
+			width: 100%;
+		}
+	}
+}

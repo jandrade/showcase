@@ -1,0 +1,38 @@
+/**
+ * @fileOverview Styles for vehicles.compare
+ *
+ */
+.vehicles.compare {
+	.panel {
+		float: left;
+
+		&:hover {
+			background-color: darken(@bg-color, 2%);
+		}
+	}
+
+	.specs {
+		margin: 1em 0;
+	}
+
+	/**
+	 * Tablet
+	 * < 768
+	 */
+	@media only screen and (max-width : @screen-sm) {
+		& {
+			font-size: @font-sm;
+		}
+	}
+
+	/**
+	 * Mobile
+	 * < 480
+	 */
+	@media only screen and (max-width : @screen-xs) {
+		& {
+			float: none;
+			width: 100%;
+		}
+	}
+}

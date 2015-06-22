@@ -5,8 +5,6 @@ public/
 /reports
 *.map
 app/**/app.css
-app/js/modules/**
-app/less/views/**
 ng.json
 
 # OS generated files #

@@ -1,0 +1,30 @@
+/**
+ * @fileOverview Styles for compare.widget
+ *
+ */
+.compare-widget {
+	position: absolute;
+	right: 0;
+	top: 1em;
+	z-index: 1;
+
+	.compare-item {
+		padding: 0 0.7em;
+
+		img {
+			border-radius: @radius;
+		}
+	}
+
+	/**
+	 * Tablet
+	 * < 768
+	 */
+	@media only screen and (max-width : @screen-sm) {
+		& {
+			margin: 0;
+			padding: 0;
+			position: static;
+		}
+	}
+}
