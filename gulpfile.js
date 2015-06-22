@@ -79,8 +79,11 @@ gulp.task('copy:prod', tasks.copyProd(gulp, plugins, config));
 // delete copied files
 gulp.task('clean', tasks.clean(config));
 
+// optimize images
+gulp.task('images', tasks.images(gulp, plugins, config));
+
 // Builds a dist/public version
-gulp.task('build', ['clean', 'test:unit', 'copy', 'images'], tasks.build(gulp, plugins, config));
+gulp.task('build', ['clean', 'copy', 'images'], tasks.build(gulp, plugins, config));
 
 // Builds a prod version
 gulp.task('build:prod', ['build', 'copy:prod']);

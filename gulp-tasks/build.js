@@ -15,7 +15,10 @@ module.exports = function (gulp, plugins, config) {
 
 	return function () {
 		gulp.src(config.app + '/index.html')
-//			.pipe(plugins.targethtml('dist'))
+			.pipe(plugins.preprocess(
+				{
+					context: {NODE_ENV: 'dist'}
+				}))
 			.pipe(plugins.usemin({
 				//css: [plugins.minifyCss(), 'concat'],
 				//js: [plugins.uglify({outSourceMap: true})]

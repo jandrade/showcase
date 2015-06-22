@@ -24,12 +24,12 @@ module.exports = function (gulp, plugins, config) {
 
 		gulp.src(config.app + '/views/**/*.html')
 			.pipe(templateCache('app.templates.js', {
-				module: 'app',
+				module: 'sc',
 				root: 'views/'
 			}))
 			.pipe(gulp.dest(config.public + '/assets/views'));
 
-		gulp.src(config.app + '/api/**/*.json')
+		gulp.src(config.app + '/api/**/*')
 			.pipe(gulp.dest(config.public + '/api'));
     };
 };

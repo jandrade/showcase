@@ -12,7 +12,7 @@
 	 * sc.vehicles Constants
 	 */
 	 var constant = {
-	 	API: '/api/'
+	 	API: 'api/'
 	 };
 
 	// component definition
