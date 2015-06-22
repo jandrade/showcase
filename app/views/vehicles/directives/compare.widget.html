@@ -1,0 +1,10 @@
+<div class="compare-widget">
+	<div class="row" ng-show="compare.validate()">
+		<ul class="compare-items col-xs-8 row">
+			<li class="compare-item pull-right" ng-repeat="item in items">
+				<img ng-src="{{item.thumb}}" width="50" alt="{{item.model}}">
+			</li>
+		</ul>
+		<a href ng-click="compare.load()"  class="btn btn-primary pull-right col-xs-4" ng-class="{'disabled': items.length <= 1}">Compare Vehicles</a>
+	</div>
+</div>

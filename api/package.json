@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Showcase API built with NodeJS (express) and MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jandrade/showcase"
+  },
+  "keywords": [
+    "api",
+    "nodejs",
+    "showcase"
+  ],
+  "author": "Juan David Andrade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jandrade/showcase/issues"
+  },
+  "homepage": "https://github.com/jandrade/showcase",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "express": "^4.13.0",
+    "mongoose": "^4.0.6"
+  }
+}

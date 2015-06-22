@@ -1,0 +1,11 @@
+{
+	"id": "2",
+	"model": "March",
+	"brand": "Nissan",
+	"year": "2014",
+	"color": "Gray",
+	"price": "12000",
+	"thumb": "assets\/img\/vehicles\/transport-q-c-480-320-5.jpg",
+	"image": "assets\/img\/vehicles\/transport-q-c-640-480-5.jpg",
+	"deal": "1"
+}

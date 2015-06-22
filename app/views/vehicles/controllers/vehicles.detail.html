@@ -1,0 +1,26 @@
+<div class="vehicles detail container-fluid">
+	<!-- tob bar -->
+	<nav class="navbar" role="navigation">
+		<a href="#/" class="btn">&lt; Go Back</a>
+	</nav>
+
+	<!-- vehicle -->
+	<div class="panel">
+		<div class="panel-body">
+			<img ng-src="{{detail.image}}" alt="{{detail.item.brand}}">
+		</div>
+		<div class="panel-footer">
+			<div class="row">
+				<h3 class="col-xs-8">{{detail.item.brand}} {{detail.item.model}}</h3>
+				<div class="checkbox col-xs-4 pull-right">
+					<label>
+						<input type="checkbox" value="1" ng-model="detail.checked" ng-click="detail.compare()"> Compare
+					</label>
+				</div>
+			</div>
+			<ul class="list-group specs">
+				<li class="list-group-item" ng-repeat="(key, value) in detail.specs"><strong>{{key}}:</strong> {{value}}</li>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+[{
+	"id": "1",
+	"model": "Avalon",
+	"brand": "Toyota",
+	"year": "2014",
+	"color": "Red",
+	"price": "15000",
+	"thumb": "assets\/img\/vehicles\/toyota-avalon.jpg",
+	"image": "assets\/img\/vehicles\/toyota-avalon-640-480.jpg",
+	"deal": "0"
+}, {
+	"id": "2",
+	"model": "March",
+	"brand": "Nissan",
+	"year": "2014",
+	"color": "Gray",
+	"price": "12000",
+	"thumb": "assets\/img\/vehicles\/transport-q-c-480-320-5.jpg",
+	"image": "assets\/img\/vehicles\/transport-q-c-640-480-5.jpg",
+	"deal": "1"
+}, {
+	"id": "3",
+	"model": "Diablo",
+	"brand": "Lamborgini",
+	"year": "2012",
+	"color": "Purple",
+	"price": "100000",
+	"thumb": "assets\/img\/vehicles\/transport-q-c-480-320-3.jpg",
+	"image": "assets\/img\/vehicles\/transport-q-c-640-480-3.jpg",
+	"deal": "0"
+}]

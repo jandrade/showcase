@@ -1,0 +1,23 @@
+<div class="vehicles index">
+	<!-- tob bar -->
+	<nav class="navbar" role="navigation">
+		<form class="navbar-form navbar-left col-sm-4" role="search">
+			<div class="form-group">
+				<label for="filter" class="filter-label">Filter by Brand</label>
+				<input type="search" name="filter" ng-model="search.brand" class="form-control col-sm-4" placeholder="Filter by Brand">
+			</div>
+		</form>
+	</nav>
+
+	<hr />
+
+	<!-- vehicles list -->
+	<ul class="items-container container-fluid">
+		<li card on-change="vm.compare(item, checked)" item="item" class="panel card" ng-repeat="item in vm.items | filter:search"></li>
+	</ul>
+
+	<!-- no results -->
+	<div class="jumbotron" ng-show="(vm.items | filter:search).length == 0">
+		<p>There are no vehicles with the brand: <strong>{{search.brand}}</strong>. Please try again.</p>
+	</div>
+</div>

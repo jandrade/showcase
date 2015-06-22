@@ -1,0 +1,38 @@
+<div class="vehicles compare">
+	<!-- tob bar -->
+	<nav class="navbar" role="navigation">
+		<a ng-href="#/" class="btn back-btn">&lt; Back</a>
+		{{compare.items.length}}
+
+	</nav>
+
+	<div class="list row">
+		<!-- vehicle -->
+		<div class="col-xs-{{12/compare.items.length}}" ng-repeat="item in compare.items">
+			<div class="panel">
+				<div class="panel-body">
+					<a href="#/vehicles/{{item.id}}">
+						<img ng-src="{{item.image}}" alt="{{item.brand}}">
+					</a>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+						<a class="col-xs-9" href="#/vehicles/{{item.id}}">
+							<h3>{{item.brand}} {{item.model}}</h3>
+						</a>
+						<a class="btn btn-warning btn-sm" href ng-click="compare.remove(item, $index)">Remove</a>
+
+					</div>
+
+					<ul class="list-group specs">
+						<li class="list-group-item"><strong>Brand:</strong> {{item.brand}}</li>
+						<li class="list-group-item"><strong>Model:</strong> {{item.model}}</li>
+						<li class="list-group-item"><strong>Color:</strong> {{item.color}}</li>
+						<li class="list-group-item"><strong>Price:</strong> {{item.price}}</li>
+						<li class="list-group-item"><strong>Year:</strong> {{item.year}}</li>
+					</ul>
+				</div>
+
+		</div>
+	</div>
+</div>

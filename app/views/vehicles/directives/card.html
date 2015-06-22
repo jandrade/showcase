@@ -1,0 +1,19 @@
+<div class="card-container">
+	<div class="panel-body tooltip-trigger" data-toggle="tooltip" data-placement="top" data-title="Today's Deal">
+		<a ng-href="#vehicles/{{item.id}}">
+			<img ng-src="{{item.thumb}}" alt="{{item.brand}}">
+		</a>
+	</div>
+	<div class="panel-footer">
+		<a ng-href="#vehicles/{{item.id}}">
+			<h3>{{item.brand}} {{item.model}}</h3>
+			<p>{{item.year}}</p>
+		</a>
+
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" value="1" ng-model="card.checked" ng-click="card.compare(item)"> Compare
+			</label>
+		</div>
+	</div>
+</div>

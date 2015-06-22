@@ -1,0 +1,33 @@
+/**
+ * @fileOverview Master layout / Grid system
+ *
+ */
+
+body {
+	background-color: @bg-color;
+	color: @text-color;
+	-webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Main content
+ */
+.main-container {
+	padding: 1em 0;
+	position: relative;
+}
+
+.section-title {
+	margin: 1em 0;
+}
+
+/**
+ * Utils
+ */
+.flash-message {
+	bottom: 0;
+	position: fixed;
+	transition: all 0.5s ease-in-out;
+	width: 100%;
+	z-index: 1;
+}
