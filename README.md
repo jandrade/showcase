@@ -121,16 +121,18 @@ This will be watching for changes in LESS files.
 |	|	|- js
 |	|	|	|- (put custom JS code here - not required by the Angular App)
 |	|- bower_components (third-pary libraries)
-|	|- modules (sub-systems)
-|	|	|- app (App configuration and running)
-|	|	|	|- sc.app.js (App initialization)
-|	|	|	|- sc.config.js (Global configuration)
-|	|	|	|- constants.js (Global constants)
-|	|	|- submodule
-|	|	|	|- sub-submodule
-|	|	|	|	|- (put controllers, directives, factories, services here)
-|	|	|	|- ....
-|	|	|	|- (put more modules here)
+|	|- js
+|	|	|- modules (sub-systems)
+|   |	|	|- app (App configuration and running)
+|   |	|	|	|- sc.app.js (App initialization)
+|   |	|	|	|- sc.config.js (Global configuration)
+|   |	|	|	|- constants.js (Global constants)
+|   |	|	|- vehicles
+|   |	|	|	|- config (module configuration)
+|   |	|	|	|- controllers (vehicle controllers)
+|   |	|	|	|- directives (vehicle components)
+|   |	|	|	|- factories (vehicle API integration)
+|   |	|	|	|- vehicles.module.js (module definition)
 |	|- less (source LESS files)
 |	|	|- base
 |	|	|	|- base.less (base tags)
