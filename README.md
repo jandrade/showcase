@@ -1,6 +1,6 @@
 #Showcase
 
-A Showcase Demo built with AngularJS, LESS and Gulp
+A Vehicle Showcase built with AngularJS, LESS and Gulp
 
 ##Table of Contents
 1. Instalation
