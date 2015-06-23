@@ -1,0 +1,26 @@
+/**
+ * @fileOverview Styles for admin.index
+ *
+ */
+.admin.index {
+
+	.media-body {
+		width: auto;
+	}
+
+	.list-group-item {
+		position: relative;
+
+		&:hover {
+			background-color: darken(@color-05, 5%);
+			box-shadow: @shadow;
+			transition: box-shadow 0.1s ease-in-out;
+		}
+	}
+
+	.remove-btn {
+		position: absolute;
+		top: 40%;
+		right: 1em;
+	}
+}

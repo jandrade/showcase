@@ -36,7 +36,7 @@
 			 */
 			(function init() {
 				if (localStorageService.get('compare')) {
-					card.checked = localStorageService.get('compare').indexOf($scope.item.id) >= 0;
+					card.checked = localStorageService.get('compare').indexOf($scope.item._id) >= 0;
 				}
 			})();
 		}

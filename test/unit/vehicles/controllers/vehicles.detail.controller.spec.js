@@ -10,11 +10,11 @@ describe('Vehicles Detail Controller', function(){
 	beforeEach(module('sc'));
 	beforeEach(module('sc.vehicles'));
 
-	beforeEach(inject(function($injector, $controller, _$rootScope_) {
+	beforeEach(inject(function($injector, $controller, _$rootScope_, Showcase) {
 		$rootScope = _$rootScope_;
 		$httpBackend = $injector.get('$httpBackend');
 
-		$httpBackend.whenGET('/api/vehicles/1').respond(200, VehicleMock.DETAIL);
+		$httpBackend.whenGET(Showcase.API + 'vehicles/1').respond(200, VehicleMock.DETAIL);
 
 		scope = $rootScope.$new();
 
@@ -28,7 +28,7 @@ describe('Vehicles Detail Controller', function(){
 	}));
 
 	it('should load the correct id', function() {
-		expect(controller.item.id).toEqual('1');
+		expect(controller.item._id).toEqual('1');
 	});
 
 	it('should add to compare', function() {

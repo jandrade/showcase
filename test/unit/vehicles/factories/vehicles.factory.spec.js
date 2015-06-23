@@ -1,22 +1,25 @@
 /* globals describe, beforeEach, it, expect, inject, vehicles, VehicleMock */
-describe("Vehicles Service", function() {
+describe("Vehicles Factory:", function() {
 	'use strict';
 	var $httpBackend,
 		vehicles,
-		request;
+		request,
+		Showcase;
 
 	// Load the main module
 	beforeEach(module('sc'));
 
-	beforeEach(inject(function($injector, _vehicles_) {
+	beforeEach(inject(function($injector, _vehicles_, _Showcase_) {
 		$httpBackend = $injector.get('$httpBackend');
 		vehicles = _vehicles_;
 
-		request = $httpBackend.whenGET('/api/vehicles/all').respond(200, VehicleMock.ALL);
+		Showcase = _Showcase_;
 
-		$httpBackend.whenGET('/api/vehicles/1').respond(200, VehicleMock.DETAIL);
+		request = $httpBackend.whenGET(Showcase.API + 'vehicles').respond(200, angular.copy(VehicleMock.ALL));
 
-		$httpBackend.whenGET('/api/vehicles/compare?id=1').respond(200, VehicleMock.COMPARE);
+		$httpBackend.whenGET(Showcase.API + 'vehicles/1').respond(200, VehicleMock.DETAIL);
+
+		$httpBackend.whenGET(Showcase.API + 'vehicles/compare/1').respond(200, angular.copy(VehicleMock.COMPARE));
 	}));
 
 	it("should return 4 vehicles", function() {
@@ -38,7 +41,7 @@ describe("Vehicles Service", function() {
 	it("should return a 404 error", function() {
 		request.respond(404, {error: true});
 
-		$httpBackend.expectGET('/api/vehicles/all');
+		$httpBackend.expectGET(Showcase.API + 'vehicles');
 
 		vehicles.getAll().catch(function(error) {
 			expect(error.error).toBe(true);

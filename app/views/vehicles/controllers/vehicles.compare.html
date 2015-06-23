@@ -2,8 +2,6 @@
 	<!-- tob bar -->
 	<nav class="navbar" role="navigation">
 		<a ng-href="#/" class="btn back-btn">&lt; Back</a>
-		{{compare.items.length}}
-
 	</nav>
 
 	<div class="list row">
@@ -11,13 +9,13 @@
 		<div class="col-xs-{{12/compare.items.length}}" ng-repeat="item in compare.items">
 			<div class="panel">
 				<div class="panel-body">
-					<a href="#/vehicles/{{item.id}}">
+					<a href="#/vehicles/{{item._id}}">
 						<img ng-src="{{item.image}}" alt="{{item.brand}}">
 					</a>
 				</div>
 				<div class="panel-footer">
 					<div class="row">
-						<a class="col-xs-9" href="#/vehicles/{{item.id}}">
+						<a class="col-xs-9" href="#/vehicles/{{item._id}}">
 							<h3>{{item.brand}} {{item.model}}</h3>
 						</a>
 						<a class="btn btn-warning btn-sm" href ng-click="compare.remove(item, $index)">Remove</a>

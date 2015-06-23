@@ -1,0 +1,28 @@
+<div class="admin index container">
+	<div class="section-title row">
+		<h2 class="col-xs-10">Admin Panel > List Vehicles</h2>
+		<a href="#/admin/vehicles/add" class="btn btn-primary pull-right">Add Vehicle</a>
+	</div>
+	<div class="alert alert-warning">
+		<p>Click to Edit</p>
+	</div>
+	<!-- vehicles list -->
+	<ul class="list-group">
+		<li class="list-group-item media" ng-repeat="item in vm.items">
+			<a ng-href="#/admin/vehicles/{{item._id}}">
+				<div class="media">
+					<div class="media-left">
+						<img ng-src="{{item.thumb}}" class="media-object" width="120" alt="{{item.brand}}">
+					</div>
+
+					<div class="media-body">
+						<h3 class="media-heading">{{item.brand}} {{item.model}}</h3>
+						<p>{{item.year}}</p>
+						<p>USD {{item.price}}</p>
+					</div>
+				</div>
+			</a>
+			<a href ng-click="vm.remove(item._id)" class="btn btn-danger remove-btn">Remove</a>
+		</li>
+	</ul>
+</div>

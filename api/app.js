@@ -13,6 +13,7 @@
 	 */
 	var express = require('express'),
 		mongoose = require('mongoose'),
+		cors = require('cors'),
 		bodyParser = require('body-parser'),
 		vehicles = require('./routes/vehicles'),
 	/**
@@ -28,6 +29,8 @@
 	// configure express
 	app.use(bodyParser.urlencoded({ extended: true }));
 	app.use(bodyParser.json());
+
+	app.use(cors());
 
 	/**
 	 * Server started correctly

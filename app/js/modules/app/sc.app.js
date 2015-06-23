@@ -23,6 +23,7 @@
 			// third-party modules
 			'LocalStorageModule', // https://github.com/grevory/angular-local-storage
 			// app modules
+			'sc.admin',
 			'sc.vehicles'
 		])
 		.run(run);

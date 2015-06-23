@@ -26,7 +26,8 @@
 			 * Go to compare section
 			 */
 			compare.load = function() {
-				var ids = $scope.items.map(function(e) { return e.id; }).toString();
+				console.log($scope.items);
+				var ids = $scope.items.toString();
 
 				$location.path('compare').search('id', ids);
 

@@ -10,11 +10,11 @@ describe('Vehicles Compare Controller', function(){
 	beforeEach(module('sc'));
 	beforeEach(module('sc.vehicles'));
 
-	beforeEach(inject(function($injector, $controller, _$rootScope_) {
+	beforeEach(inject(function($injector, $controller, _$rootScope_, Showcase) {
 		$rootScope = _$rootScope_;
 		$httpBackend = $injector.get('$httpBackend');
 
-		$httpBackend.whenGET('/api/vehicles/compare?1,2,3').respond(200, VehicleMock.COMPARE);
+		$httpBackend.whenGET(Showcase.API + 'vehicles/compare?1,2,3').respond(200, VehicleMock.COMPARE);
 
 		scope = $rootScope.$new();
 

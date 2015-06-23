@@ -3,7 +3,7 @@
  */
 
 var v1 = {
-		"id": "1",
+		"_id": "1",
 		"model": "Avalon",
 		"brand": "Toyota",
 		"year": "2014",
@@ -14,7 +14,7 @@ var v1 = {
 		"deal": "0"
 	},
 	v2 = {
-		"id": "2",
+		"_id": "2",
 		"model": "March",
 		"brand": "Nissan",
 		"year": "2014",
@@ -25,7 +25,7 @@ var v1 = {
 		"deal": "1"
 	},
 	v3 = {
-		"id": "3",
+		"_id": "3",
 		"model": "Diablo",
 		"brand": "Lamborgini",
 		"year": "2012",
@@ -36,7 +36,7 @@ var v1 = {
 		"deal": "0"
 	},
 	v4 = {
-		"id": "4",
+		"_id": "4",
 		"model": "Cooper",
 		"brand": "Mini",
 		"year": "2010",

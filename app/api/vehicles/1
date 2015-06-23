@@ -1,7 +1,7 @@
 {
 	"brand": "Toyota",
 	"color": "Red",
-	"deal": "0",
+	"deal": false,
 	"id": "1",
 	"image": "assets/img/vehicles/toyota-avalon-640-480.jpg",
 	"model": "Avalon",

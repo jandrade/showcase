@@ -21,8 +21,8 @@ describe("Card Directive", function() {
 		var item = {
 			"brand": "Toyota",
 			"color": "Red",
-			"deal": "1",
-			"id": "1",
+			"deal": false,
+			"_id": "1",
 			"image": "assets/img/vehicles/toyota-avalon-640-480.jpg",
 			"model": "Avalon",
 			"price": "15000",

@@ -10,12 +10,12 @@ describe('Vehicles Index Controller', function(){
 	beforeEach(module('sc'));
 	beforeEach(module('sc.vehicles'));
 
-	beforeEach(inject(function($injector, $controller, _$rootScope_) {
+	beforeEach(inject(function($injector, $controller, _$rootScope_, Showcase) {
 		$rootScope = _$rootScope_;
 		$httpBackend = $injector.get('$httpBackend');
 
-		$httpBackend.whenGET('/api/vehicles/compare?id=1').respond(200, VehicleMock.COMPARE);
-		$httpBackend.whenGET('/api/vehicles/compare?id=1,2,3,4').respond(200, VehicleMock.COMPARE);
+		$httpBackend.whenGET(Showcase.API + 'vehicles/compare/1').respond(200, VehicleMock.COMPARE);
+		$httpBackend.whenGET(Showcase.API + 'vehicles/compare/1,2,3,4').respond(200, VehicleMock.COMPARE);
 
 		scope = $rootScope.$new();
 
@@ -24,7 +24,7 @@ describe('Vehicles Index Controller', function(){
 		// Create the controller
 		controller = $controller('vehiclesIndexController', {
 			$scope: scope,
-			vehiclesCollection: VehicleMock.ALL
+			vehiclesCollection: angular.copy(VehicleMock.ALL)
 		});
 
 		$rootScope.compareItems = [];

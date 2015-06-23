@@ -19,7 +19,7 @@ describe("Compare Widget Directive", function() {
 		scope = $rootScope.$new();
 
 		// assign object to directive
-		scope.items = VehicleMock.COMPARE;
+		scope.items = [1,2,3];
 
 		// default element
 		element = angular.element('<div compare-widget items="items"></div>');
@@ -42,6 +42,6 @@ describe("Compare Widget Directive", function() {
 	it("should load compare page", function() {
 		var button = element.find('a');
 		button.click();
-		expect(controller.load()).toBe('2,3');
+		expect(controller.load()).toBe('1,2,3');
 	});
 });

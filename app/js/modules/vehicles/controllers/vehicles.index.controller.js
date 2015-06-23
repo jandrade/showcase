@@ -22,7 +22,7 @@
 
 			var filteredItems = vehicles.validate(item, checked);
 
-			if (filteredItems.length > 3) {
+			if (filteredItems.length >= 3) {
 				$rootScope.flashMessage = 'You can only select up to 3 vehicles to compare.';
 
 				$timeout(function() {
@@ -41,10 +41,7 @@
 			var compareItems = localStorageService.get('compare');
 
 			if (compareItems && compareItems.length) {
-				// get details
-				vehicles.compare(compareItems.toString()).then(function(data) {
-					$rootScope.compareItems = data || [];
-				});
+				$rootScope.compareItems = compareItems || [];
 			}
 		})();
 	}

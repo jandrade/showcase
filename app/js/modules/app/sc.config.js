@@ -14,6 +14,7 @@
 	function config($routeProvider, $httpProvider, localStorageServiceProvider) {
 		$httpProvider.defaults.headers.common.Accept = 'application/json, text/javascript';
 		$httpProvider.defaults.headers.common['Content-Type'] = 'application/json; charset=utf-8';
+		$httpProvider.defaults.useXDomain = true;
 
 		// configure local storage
 		localStorageServiceProvider.setPrefix('app.storage');

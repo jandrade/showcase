@@ -29,7 +29,7 @@
 		 * @return {Promise}
 		 */
 		function getAll() {
-			return $http.get(Showcase.API + 'vehicles/all')
+			return $http.get(Showcase.API + 'vehicles')
 				.then(getCompleteHandler)
 				.catch(getErrorHandler);
 		}
@@ -51,7 +51,7 @@
 		 * @return {Promise}
 		 */
 		function compare(id) {
-			return $http.get(Showcase.API + 'vehicles/compare?id=' + id)
+			return $http.get(Showcase.API + 'vehicles/compare/' + id)
 				.then(getCompleteHandler)
 				.catch(getErrorHandler);
 		}
@@ -62,18 +62,16 @@
 		 */
 		function validate(item, checked) {
 			// substract IDs from each compared item
-			var filteredItems = $rootScope.compareItems.map(function(e) { return e.id; });
+			var filteredItems = $rootScope.compareItems.map(function(e) { return e._id; });
 
 			if (checked) {
-				$rootScope.compareItems.push(item);
+				$rootScope.compareItems.push(item._id);
 			} else {
-				var index = filteredItems.indexOf(item.id);
+				var index = $rootScope.compareItems.indexOf(item._id);
 				$rootScope.compareItems.splice(index, 1);
 			}
 
-			filteredItems = $rootScope.compareItems.map(function(e) { return e.id; });
-
-			localStorageService.set('compare', filteredItems);
+			localStorageService.set('compare', $rootScope.compareItems);
 
 			return filteredItems;
 		}

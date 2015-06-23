@@ -1,5 +1,5 @@
 /**
- * @fileOverview Showcase Global Constants
+ * @fileOverview sc.admin Constants
  *
  * @description Constants required for this module
  *
@@ -9,16 +9,13 @@
 'use strict';
 
 	/**
-	 * sc.vehicles Constants
+	 * sc.admin Constants
 	 */
-	 var constant = {
-	 	//API: '/api/'
-	 	API: 'http://localhost:8080/api/'
-	 };
+	 var constant = {};
 
 	// component definition
 	angular
-		.module('sc')
-		.constant('Showcase', constant);
+		.module('sc.admin')
+		.constant('sc.adminConstant', constant);
 
 })(angular);

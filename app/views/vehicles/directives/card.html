@@ -1,11 +1,11 @@
 <div class="card-container">
 	<div class="panel-body tooltip-trigger" data-toggle="tooltip" data-placement="top" data-title="Today's Deal">
-		<a ng-href="#vehicles/{{item.id}}">
+		<a ng-href="#vehicles/{{item._id}}">
 			<img ng-src="{{item.thumb}}" alt="{{item.brand}}">
 		</a>
 	</div>
 	<div class="panel-footer">
-		<a ng-href="#vehicles/{{item.id}}">
+		<a ng-href="#vehicles/{{item._id}}">
 			<h3>{{item.brand}} {{item.model}}</h3>
 			<p>{{item.year}}</p>
 		</a>

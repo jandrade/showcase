@@ -30,7 +30,6 @@ router.get('/vehicles', function (req, res) {
 			if (err) {
 				res.send(err);
 			}
-
 			res.json(data);
 	});
 
@@ -42,25 +41,25 @@ router.get('/vehicles', function (req, res) {
 router.post('/vehicles', function (req, res) {
 		var vehicle = new Vehicle(req.body);
 
-		vehicle.save(function(err){
+		vehicle.save(function(err, data){
 			if(err) {
-				res.send(err);
+				res.send({success: false, _id: data.id, error: err});
 			}
 
 			res.send({success: true});
 		});
 	});
 
-router.route('/vehicles/:id')
+router.route('/vehicles/\/([^\/]+)\/?/')
 	/**
 	 * Returns a selected vehicle
 	 *
 	 * ROUTE: [GET] /api/vehicles/:id
 	 */
 	.get(function (req, res) {
-		Vehicle.findOne({_id:req.params.id},function(err, vehicle) {
+		Vehicle.findOne({_id:req.params[0]},function(err, vehicle) {
 			if(err) {
-				res.send(err);
+				res.send({success: false, error: err});
 			}
 
 			res.json(vehicle);
@@ -86,7 +85,7 @@ router.route('/vehicles/:id')
 			// update the vehicle
 			vehicle.save(function(err) {
 				if (err) {
-					res.send(err);
+					res.send({success: false, error: err});
 				}
 
 				res.send({success: true});
@@ -104,12 +103,30 @@ router.route('/vehicles/:id')
 			_id: req.params.id
 		}, function (err, vehicle) {
 			if (err) {
-				res.send(err);
+				res.send({success: false, error: err});
 			}
 
 			res.json({success: true, id: vehicle.id});
 		});
 	});
 });
+
+/**
+ * Returns a list of vehicles to be compared
+ *
+ * ROUTE: [GET] /api/vehicles/compare?id=:id
+ */
+router.route('/vehicles/compare/:id')
+	.get(function (req, res) {
+		Vehicle.find({
+			_id: { $in: req.params.id.split(',') }
+		},function(err, vehicle) {
+			if(err) {
+				res.send({success: false, error: err});
+			}
+
+			res.json(vehicle);
+		});
+	})
 
 module.exports = router;

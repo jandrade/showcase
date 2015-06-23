@@ -26,7 +26,7 @@
 				<h1>Vehicle Showcase</h1>
 				<h3><small>by Juan David Andrade</small></h3>
 			</a>
-			<!--<a href="#/admin/" class="btn btn-default pull-right">ADMIN</a>-->
+			<a href="#/admin/" class="btn btn-default pull-right">ADMIN</a>
   		</header>
 		<div class="content">
 
@@ -50,17 +50,24 @@
 
 		<!-- build:js assets/js/app.js -->
   		<!-- inject:js -->
+		<script src="js/modules/admin/admin.module.js"></script>
 		<script src="js/modules/app/sc.app.js"></script>
 		<script src="js/modules/app/sc.config.js"></script>
 		<script src="js/modules/app/sc.constants.js"></script>
 		<script src="js/modules/vehicles/vehicles.module.js"></script>
+		<script src="js/modules/admin/config/admin.config.js"></script>
+		<script src="js/modules/admin/config/admin.constants.js"></script>
+		<script src="js/modules/admin/controllers/admin.create.controller.js"></script>
+		<script src="js/modules/admin/controllers/admin.edit.controller.js"></script>
+		<script src="js/modules/admin/controllers/admin.index.controller.js"></script>
+		<script src="js/modules/admin/factories/adminVehicles.factory.js"></script>
 		<script src="js/modules/vehicles/config/vehicles.config.js"></script>
 		<script src="js/modules/vehicles/config/vehicles.constants.js"></script>
+		<script src="js/modules/vehicles/directives/card.directive.js"></script>
+		<script src="js/modules/vehicles/directives/compare.widget.directive.js"></script>
 		<script src="js/modules/vehicles/controllers/vehicles.compare.controller.js"></script>
 		<script src="js/modules/vehicles/controllers/vehicles.detail.controller.js"></script>
 		<script src="js/modules/vehicles/controllers/vehicles.index.controller.js"></script>
-		<script src="js/modules/vehicles/directives/card.directive.js"></script>
-		<script src="js/modules/vehicles/directives/compare.widget.directive.js"></script>
 		<script src="js/modules/vehicles/factories/vehicles.factory.js"></script>
 		<!-- endinject -->
 		<!-- endbuild -->
