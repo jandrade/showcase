@@ -21,7 +21,7 @@
 	 */
 		app = express(),
 		server,
-		port = process.env.PORT || 8080;
+		port = process.env.PORT || 3000;
 
 	// connect to database
 	mongoose.connect('mongodb://localhost/showcase');
