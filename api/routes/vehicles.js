@@ -50,14 +50,14 @@ router.post('/vehicles', function (req, res) {
 		});
 	});
 
-router.route('/vehicles/\/([^\/]+)\/?/')
+router.route('/vehicles/:id')
 	/**
 	 * Returns a selected vehicle
 	 *
 	 * ROUTE: [GET] /api/vehicles/:id
 	 */
 	.get(function (req, res) {
-		Vehicle.findOne({_id:req.params[0]},function(err, vehicle) {
+		Vehicle.findOne({_id:req.params.id},function(err, vehicle) {
 			if(err) {
 				res.send({success: false, error: err});
 			}
@@ -114,7 +114,7 @@ router.route('/vehicles/\/([^\/]+)\/?/')
 /**
  * Returns a list of vehicles to be compared
  *
- * ROUTE: [GET] /api/vehicles/compare?id=:id
+ * ROUTE: [GET] /api/vehicles/compare/:id
  */
 router.route('/vehicles/compare/:id')
 	.get(function (req, res) {
@@ -127,6 +127,6 @@ router.route('/vehicles/compare/:id')
 
 			res.json(vehicle);
 		});
-	})
+	});
 
 module.exports = router;
