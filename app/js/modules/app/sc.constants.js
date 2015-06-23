@@ -13,7 +13,7 @@
 	 */
 	 var constant = {
 	 	//API: '/api/'
-	 	API: 'http://localhost:8080/api/'
+	 	API: 'http://' + window.location.hostname + ':8080/api/'
 	 };
 
 	// component definition
